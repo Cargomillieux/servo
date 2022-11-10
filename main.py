@@ -6,5 +6,13 @@ def on_forever():
     for index in range(17):
         angle = index * 10 + 10
         servos.P0.set_angle(angle)
-        basic.pause(100)
+        basic.pause(150)
+        if index == 16:
+            for index in range(17):
+                angle = index / 10 + 10
+                servos.P0.set_angle(angle)
+                basic.pause(150)
+                
+            
+
 basic.forever(on_forever)
